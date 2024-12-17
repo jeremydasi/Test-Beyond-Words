@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import Button from './Button';
 
 const TaskList = ({ tasks, onRemoveTask }) => {
   return (
@@ -6,7 +7,7 @@ const TaskList = ({ tasks, onRemoveTask }) => {
       {tasks.map((task, index) => (
         <li key={index}>
           {task}
-          <button onClick={() => onRemoveTask(index)}>Remove</button>
+          <Button label="Supprimer" onClick={() => onRemoveTask(index)} />
         </li>
       ))}
     </ul>

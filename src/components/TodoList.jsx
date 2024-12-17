@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import TaskInputModal from './TaskInputModal';
-import TaskList from './TaskList';
+import React, { useState } from "react";
+import TaskInputModal from "./TaskInputModal";
+import TaskList from "./TaskList";
+import Button from './Button';
 
 const TodoList = () => {
   const [tasks, setTasks] = useState([]);
@@ -21,9 +22,9 @@ const TodoList = () => {
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <div className="todo-list">
+    <div className="todoList">
       <h1>Todo List</h1>
-      <button onClick={openModal}>Add Task</button>
+      <Button label="Ajouter une tâche" onClick={openModal} />
       <TaskList tasks={tasks} onRemoveTask={handleRemoveTask} />
       {isModalOpen && (
         <TaskInputModal onAddTask={handleAddTask} onClose={closeModal} />
